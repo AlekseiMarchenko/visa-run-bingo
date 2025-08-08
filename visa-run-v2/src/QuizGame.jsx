@@ -16,6 +16,7 @@ export default function QuizGame() {
   const isCorrect = selected === quizData.correctIndex;
 
   const handleAnswer = (index) => {
+  // handle answer selection
     if (!answered) {
       setSelected(index);
       setAnswered(true);
@@ -60,11 +61,9 @@ export default function QuizGame() {
         {answered && (
           <div className="feedback">
             {isCorrect ? '✅ Правильно!' : '❌ Неверно. Попробуй ещё раз!'}
-            {!isCorrect && (
-              <button className="retry-button" onClick={resetQuiz}>
-                Попробовать снова
-              </button>
-            )}
+            <button className="retry-button" onClick={resetQuiz}>
+              {isCorrect ? 'Играть снова' : 'Попробовать снова'}
+            </button>
           </div>
         )}
       </motion.div>

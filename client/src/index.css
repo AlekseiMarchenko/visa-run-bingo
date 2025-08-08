@@ -1,0 +1,113 @@
+/*
+ * Basic styles for the Visa Run Bingo client.
+ * These styles are intentionally kept lightweight and use utility-like
+ * class names to avoid pulling in a full CSS framework. Feel free to
+ * extend or replace them with your own styles.
+ */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.app-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.counters {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cell {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  background-color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.cell.opened {
+  background-color: #cde2ff;
+  font-weight: bold;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button.primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+button.secondary {
+  background-color: #10b981;
+  color: white;
+}
+
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.tasks {
+  margin-top: 20px;
+}
+
+.tasks h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.tasks ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tasks li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.check {
+  color: #16a34a;
+  font-size: 18px;
+}

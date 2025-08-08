@@ -15,11 +15,38 @@ const DEFAULT_CITIES = [
 ];
 
 const TASK_DEFS = [
-  { id: 'subscribe', title: 'Подписаться на канал', reward: { keys: 1, tickets: 1 }, needsCheck: true },
-  { id: 'pin_bot', title: 'Закрепить бота', reward: { keys: 1, tickets: 1 }, needsCheck: false },
-  { id: 'invite_friend', title: 'Пригласить друга', reward: { keys: 1, tickets: 1 }, needsCheck: false },
-  { id: 'send_route', title: 'Отправить маршрут', reward: { keys: 1, tickets: 1 }, needsCheck: false },
-  { id: 'mini_quiz', title: 'Пройти мини‑квиз', reward: { keys: 1, tickets: 1 }, needsCheck: false },
+  {
+    id: 'subscribe',
+    title: 'Подписаться на канал',
+    reward: { keys: 1, tickets: 1, coins: 5 },
+    needsCheck: true,
+  },
+  {
+    id: 'pin_bot',
+    title: 'Закрепить бота',
+    reward: { keys: 1, tickets: 1, coins: 5 },
+    needsCheck: false,
+  },
+  {
+    id: 'invite_friend',
+    title: 'Пригласить друга',
+    reward: { keys: 1, tickets: 1, coins: 10 },
+    needsCheck: false,
+  },
+  {
+    id: 'send_route',
+    title: 'Отправить маршрут',
+    // Grant a coin bonus for sending your usual route.
+    reward: { keys: 1, tickets: 1, coins: 5 },
+    needsCheck: false,
+  },
+  {
+    id: 'mini_quiz',
+    title: 'Пройти мини‑квиз',
+    // Mini‑quiz awards keys, tickets and coins.
+    reward: { keys: 1, tickets: 1, coins: 10 },
+    needsCheck: false,
+  },
 ];
 
 // Helper to load state from localStorage on first render

@@ -41,31 +41,40 @@ const TASK_DEFINITIONS = [
   {
     id: 'subscribe',
     label: 'Подпишись на канал',
-    reward: { keys: 1, tickets: 1 },
-    needsCheck: true
+    // Reward users for subscribing with a key, ticket and a small amount of coins.
+    reward: { keys: 1, tickets: 1, coins: 5 },
+    // Disable subscription check when CHANNEL_ID is not configured or when running without a channel.
+    // Setting needsCheck to false allows users to complete the task without the bot verifying
+    // channel membership. To re‑enable the check, set this value back to true and ensure
+    // CHANNEL_ID is defined in your environment.
+    needsCheck: false
   },
   {
     id: 'pin_bot',
     label: 'Добавь бота в закреп',
-    reward: { keys: 1, tickets: 1 },
+    // Pinned bot task grants a key, ticket and coins.
+    reward: { keys: 1, tickets: 1, coins: 5 },
     needsCheck: false
   },
   {
     id: 'invite_friend',
     label: 'Пригласи 1 друга',
-    reward: { keys: 1, tickets: 1 },
+    // Inviting a friend grants a larger coin bonus on top of keys and tickets.
+    reward: { keys: 1, tickets: 1, coins: 10 },
     needsCheck: false
   },
   {
     id: 'send_route',
     label: 'Отправь маршрут, откуда ты обычно летаешь',
-    reward: { keys: 1, tickets: 0 },
+    // Sending your usual route gives a key and a small coin bonus.
+    reward: { keys: 1, tickets: 0, coins: 5 },
     needsCheck: false
   },
   {
     id: 'mini_quiz',
     label: 'Пройди мини‑квиз',
-    reward: { keys: 1, tickets: 1 },
+    // Completing the mini‑quiz rewards keys, tickets and coins.
+    reward: { keys: 1, tickets: 1, coins: 10 },
     needsCheck: false
   }
 ];
@@ -143,6 +152,8 @@ function createDefaultState(userId) {
 function creditReward(state, reward) {
   state.keys += reward.keys || 0;
   state.tickets += reward.tickets || 0;
+  // Add any coins included in the reward. Undefined coins are treated as 0.
+  state.coins = (state.coins || 0) + (reward.coins || 0);
 }
 
 // Create Express app and configure middleware

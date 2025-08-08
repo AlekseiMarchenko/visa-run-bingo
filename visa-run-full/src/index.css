@@ -1,0 +1,184 @@
+/* Global styles for the Visa Run Bingo app */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background: linear-gradient(to bottom right, #fdf6e3, #ffecc7);
+  color: #333;
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.cell {
+  padding: 1rem;
+  border: 2px solid #eee;
+  border-radius: 0.5rem;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  font-size: 1rem;
+}
+
+.cell.opened {
+  background: #e1f8e8;
+  border-color: #9bd7aa;
+  font-weight: bold;
+}
+
+.open-city-btn {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ff8a00;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 1rem;
+}
+
+.open-city-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tasks {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.task.done span {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.task button {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 0.4rem;
+  background-color: #007acc;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.task button:hover {
+  background-color: #005fa3;
+}
+
+/* Quiz overlay styles */
+.quiz-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.quiz-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.quiz-card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #ff5e00;
+}
+
+.quiz-card p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.option-button {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.option-button.correct {
+  background-color: #e1f8e8;
+  border-color: #9bd7aa;
+  color: #0a581b;
+}
+
+.option-button.wrong {
+  background-color: #fde2e2;
+  border-color: #f5b6b6;
+  color: #b00000;
+}
+
+.option-button:disabled {
+  cursor: default;
+}
+
+.feedback {
+  margin-top: 1rem;
+}
+
+.feedback button {
+  margin-top: 0.8rem;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ff8a00;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.feedback button:hover {
+  background-color: #ff7400;
+}
